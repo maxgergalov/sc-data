@@ -61,6 +61,9 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
                 <li>
+                    <a class="page-scroll" href="">Sign up</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="relationviewer">Log In</a>
                 </li>
             </ul>
@@ -166,7 +169,7 @@
             <div class="col-lg-4 text-center">
                 <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
                 <p><a href="mailto:your-email@your-domain.com">maxgergalov@gmail.com</a></p>
-                <p><a href="mailto:your-email@your-domain.com">alexanderterekhow.by@gamil.com</a></p>
+                <p><a href="mailto:your-email@your-domain.com">alexanderterekhow.by@gmail.com</a></p>
             </div>
         </div>
     </div>
