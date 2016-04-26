@@ -1,0 +1,73 @@
+﻿nrel_altitude <- sc_node_norole_relation;;
+nrel_altitude => nrel_main_idtf:
+[абсолютная высота*] (* <- lang_ru;; *);;
+nrel_altitude => nrel_main_idtf:
+[altitude*] (* <- lang_en;; *);;
+
+nrel_watercourse_type <- sc_node_norole_relation;;
+nrel_watercourse_type => nrel_main_idtf:
+[тип водотока*] (* <- lang_ru;; *);;
+nrel_watercourse_type => nrel_main_idtf:
+[watercourse type*] (* <- lang_en;; *);;
+
+nrel_depth <- sc_node_norole_relation;;
+nrel_depth => nrel_main_idtf:
+[глубина*] (* <- lang_ru;; *);;
+nrel_depth => nrel_main_idtf:
+[depth*] (* <- lang_en;; *);;
+
+nrel_qualitative_features_of_water <- sc_node_norole_relation;;
+nrel_qualitative_features_of_water => nrel_main_idtf:
+[качественные особенности воды*] (* <- lang_ru;; *);;
+nrel_qualitative_features_of_water => nrel_main_idtf:
+[qualitative features of water*] (* <- lang_en;; *);;
+
+nrel_square <- sc_node_norole_relation;;
+nrel_square => nrel_main_idtf:
+[площадь*] (* <- lang_ru;; *);;
+nrel_square => nrel_main_idtf:
+[square*] (* <- lang_en;; *);;
+
+nrel_coastline <- sc_node_norole_relation;;
+nrel_coastline => nrel_main_idtf:
+[длина береговой линии*] (* <- lang_ru;; *);;
+nrel_coastline => nrel_main_idtf:
+[coastline*] (* <- lang_en;; *);;
+
+nrel_maximum_width <- sc_node_norole_relation;;
+nrel_maximum_width => nrel_main_idtf:
+[максимальная ширина*] (* <- lang_ru;; *);;
+nrel_maximum_width => nrel_main_idtf:
+[maximum width*] (* <- lang_en;; *);;
+
+nrel_maximum_length <- sc_node_norole_relation;;
+nrel_maximum_length => nrel_main_idtf:
+[максимальная длина*] (* <- lang_ru;; *);;
+nrel_maximum_length => nrel_main_idtf:
+[maximum length*] (* <- lang_en;; *);;
+
+nrel_watershed <- sc_node_norole_relation;;
+nrel_watershed => nrel_main_idtf:
+[относится к бассейну реки*] (* <- lang_ru;; *);;
+nrel_watershed => nrel_main_idtf:
+[watershed*] (* <- lang_en;; *);;
+
+nrel_location <- sc_node_norole_relation;;
+nrel_location => nrel_main_idtf:
+[месторасположение*] (* <- lang_ru;; *);;
+nrel_location => nrel_main_idtf:
+[location*] (* <- lang_en;; *);;
+
+nrel_comunication_with_other_lakes <- sc_node_norole_relation;;
+nrel_comunication_with_other_lakes => nrel_main_idtf:
+[связь с другими озёрами*] (* <- lang_ru;; *);;
+nrel_comunication_with_other_lakes => nrel_main_idtf:
+[comunication with other lakes*] (* <- lang_en;; *);;
+
+nrel_text_disription <- sc_node_norole_relation;;
+nrel_text_disription <- quasybinary_relation;;
+nrel_text_disription => nrel_main_idtf:
+[текстовое описание*] (* <- lang_ru;; *);;
+nrel_text_disription => nrel_main_idtf:
+[text discription*] (* <- lang_en;; *);;
+
