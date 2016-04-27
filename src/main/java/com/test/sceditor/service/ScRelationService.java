@@ -52,7 +52,9 @@ public class ScRelationService {
 
         String output = "";
         for (Map.Entry<String, String> relation : notionAttr.entrySet()) {
-            output += toScs(notionName, relation.getKey(), relation.getValue()) + "\n";
+            if(!relation.getValue().equals("")){
+                output += toScs(notionName, relation.getKey(), relation.getValue()) + "\n";
+            }
         }
         return output;
     }
