@@ -71,7 +71,7 @@
     <div class="call-to-action">
       <h2>Our course project is completely open and you can look at the source code!</h2>
       <i class="fa fa-github fa-3x wow bounceIn"></i>
-      <a href="#" class="btn btn-default btn-xl wow tada">Source code!</a>
+      <a href="https://github.com/maxgergalov/sc-data" class="btn btn-default btn-xl wow tada">Source code!</a>
     </div>
   </div>
 </aside>
