@@ -1,0 +1,25 @@
+﻿nrel_altitude <- sc_node_norole_relation;;
+nrel_altitude => nrel_main_idtf:
+[абсолютная высота*] (* <- lang_ru;; *);;
+nrel_altitude => nrel_main_idtf:
+[altitude*] (* <- lang_en;; *);;
+
+nrel_maximum_length <- sc_node_norole_relation;;
+nrel_maximum_length => nrel_main_idtf:
+[максимальная длина*] (* <- lang_ru;; *);;
+nrel_maximum_length => nrel_main_idtf:
+[maximum length*] (* <- lang_en;; *);;
+
+nrel_location <- sc_node_norole_relation;;
+nrel_location => nrel_main_idtf:
+[месторасположение*] (* <- lang_ru;; *);;
+nrel_location => nrel_main_idtf:
+[location*] (* <- lang_en;; *);;
+
+nrel_text_disription <- sc_node_norole_relation;;
+nrel_text_disription <- quasybinary_relation;;
+nrel_text_disription => nrel_main_idtf:
+[текстовое описание*] (* <- lang_ru;; *);;
+nrel_text_disription => nrel_main_idtf:
+[text discription*] (* <- lang_en;; *);;
+

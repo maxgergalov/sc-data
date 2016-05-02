@@ -3,11 +3,18 @@ package com.test.sceditor.service;
 
 import com.test.sceditor.entity.ScRelation;
 import com.test.sceditor.repository.ScRelationRepository;
+import org.apache.commons.fileupload.disk.DiskFileItem;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +24,8 @@ import java.util.regex.Pattern;
 
 @Service
 public class ScRelationService {
+
+    private String pathToExamples = "/home/yourmind/IdeaProjects/kp/sc-data/src/main/webapp/resources/example";
 
     @Autowired
     ScRelationRepository scRelationRepository;
@@ -66,6 +75,24 @@ public class ScRelationService {
 
     public List<ScRelation> getAll() {
         return scRelationRepository.findAll();
+    }
+
+    public ArrayList<String> getExamples() throws Exception {
+        ArrayList examples = new ArrayList();
+        File myFolder = new File(pathToExamples);
+        File[] files = myFolder.listFiles();
+        for (File file : files) {
+            examples.add(file.getName());
+        }
+        return examples;
+    }
+
+    public MultipartFile getExistTemlate(String fileName) throws IOException {
+        File file = new File(pathToExamples + "/" + fileName);
+        FileInputStream input = new FileInputStream(file);
+        MultipartFile multipartFile = new MockMultipartFile("file",
+                file.getName(), "text/plain", IOUtils.toByteArray(input));
+        return multipartFile;
     }
 
 }

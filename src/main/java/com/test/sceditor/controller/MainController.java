@@ -19,9 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +38,11 @@ public class MainController {
     public ModelAndView showIndex() {
         ModelAndView relationViewer = new ModelAndView("RelationUploadForm");
         relationViewer.addObject("relationList", scRelationService.getAll());
+        try {
+            relationViewer.addObject("exampleList", scRelationService.getExamples());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return relationViewer;
     }
 
@@ -73,5 +80,13 @@ public class MainController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout";
+    }
+
+    @RequestMapping(value = "/uploadTemplateFromExist", method = RequestMethod.POST)
+    public ModelAndView uploadTemplateFromExist(@RequestParam("filename") String templateName) throws IOException {
+        List<ScRelation> relationList = scRelationService.parseRelationScsFile(scRelationService.getExistTemlate(templateName));
+        ModelAndView notionEditorPage = new ModelAndView("NotionBuilder");
+        notionEditorPage.addObject("relationList", relationList);
+        return notionEditorPage;
     }
 }

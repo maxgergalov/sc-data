@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="resources/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css" type="text/css">
 
     <!-- Plugin CSS -->
@@ -38,45 +40,62 @@
 <body id="page-top">
 
 <header style="min-height: 5%;">
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="/">SC Data</a>
-        </div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">SC Data</a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll" href="#">Username</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/">Log out</a>
-                </li>
-            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#">Username</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">Log out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+        <!-- /.container-fluid -->
+    </nav>
 </header>
 
 <div class="container">
-    <h3 style="width:500px; padding-top: -10px" >
+    <h3 style="width:500px; padding-top: -10px">
         Для создания понятия загрузите файл с отношениями, на основе которых будет строиться пониятие.
     </h3>
 
     <form method="POST" enctype="multipart/form-data" action="uploadNotionTemplate">
-        File to upload: <input id="relation-file-input" type="file" name="file" ><br>
+        File to upload: <input id="relation-file-input" type="file" name="file"><br>
         <button class="btn btn-primary btn-xl page-scroll" id="upload-file">Загрузить файл с отношениями</button>
     </form>
+
+    <h3 style="width:500px; padding-top: -10px">
+        Или выберите одну из существующих схем понятий
+    </h3>
+
+
+    <form method="POST" action="/uploadTemplateFromExist">
+        <select name="filename">
+            <option value="null">Выберите шаблон...</option>
+            <c:forEach var="example" items="${exampleList}">
+                <option value="${example}">${example}</option>
+            </c:forEach>
+        </select>
+        <input class="btn btn-primary btn-xl page-scroll" type="submit" value="Next step">
+    </form>
+
 </div>
 
 <aside class="bg-dark">
@@ -95,7 +114,8 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Let's Get In Touch!</h2>
                 <hr class="primary">
-                <p>If you have any ideas , comments , questions, or you want to help us with the project contact us! Write us in skype or send us an email and we will get back to you as soon as possible!</p>
+                <p>If you have any ideas , comments , questions, or you want to help us with the project contact us!
+                    Write us in skype or send us an email and we will get back to you as soon as possible!</p>
             </div>
             <div class="col-lg-4 col-lg-offset-2 text-center">
                 <i class="fa fa-skype fa-3x wow bounceIn"></i>
@@ -124,6 +144,9 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="resources/js/creative.js"></script>
+
+<script src="<c:url value="/resources/scripts/relation-panel.js" />"></script>
+<script src="<c:url value="/resources/scripts/jquery-2.1.4.min.js" />"></script>
 
 </body>
 
