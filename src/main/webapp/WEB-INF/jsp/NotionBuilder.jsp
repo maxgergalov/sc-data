@@ -80,7 +80,7 @@
         </div>
         <div class="notion-attr-row">
             <div class="rel-caption">Русский идентификатор:</div>
-            <input class="rel-key" type="hidden" value="nrel_main_idtf:">
+            <input class="rel-key" type="hidden" value="nrel_main_idtf">
             <input class="rel-value" type="text" placeholder="Значение">
         </div>
         <c:forEach var="relation" items="${relationList}">

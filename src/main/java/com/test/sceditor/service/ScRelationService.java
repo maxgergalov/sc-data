@@ -70,7 +70,6 @@ public class ScRelationService {
 
     private String toScs(String termName, String rel, String val) {
         return String.format("%s => %s: [%s];;", termName, rel, val);
-
     }
 
     public List<ScRelation> getAll() {
